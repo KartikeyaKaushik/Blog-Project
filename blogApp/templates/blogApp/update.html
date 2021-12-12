@@ -3,7 +3,7 @@
   <h3 class="my-5">Update Post</h3>
   <form action="" class="post" novalidate>
     {% csrf_token %} {{form.as_p}}
-    <input type="submit" value="Add" class="btn btn-success" />
+    <input type="submit" value="Update" class="btn btn-success" />
     <a href="{% url 'dashboard' %}" class="btn btn-danger">Cancel</a>
   </form>
 </div>

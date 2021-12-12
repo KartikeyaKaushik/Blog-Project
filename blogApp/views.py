@@ -64,14 +64,16 @@ def user_logout(request):
 
 def add_post(request):
     if request.user.is_authenticated:
-        if request.method=="POST":
+        if request.method == 'POST':
             form = PostForm(request.POST)
             if form.is_valid():
-                title = form.cleaned_data['title']
-                desc = form.cleaned_data['desc']
-                pst = Post(title=title, desc=desc)
+                #form.save()
+                
+                tit = form.cleaned_data['title']
+                des = form.cleaned_data['desc']
+                pst = Post(title=tit, desc=des)
                 pst.save()
-                form = PostForm()
+                #form = PostForm()
         else:
             form = PostForm()
         return render(request, "blogApp/addpost.html", {'form':form})
