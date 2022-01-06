@@ -103,7 +103,8 @@ def delete_post(request, id):
     else:
         return HttpResponseRedirect('/login')
 
-
+def userregstration(request):
+    pass
 '''
 {% url 'updatepost' %}
 
