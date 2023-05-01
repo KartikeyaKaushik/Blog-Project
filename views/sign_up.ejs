@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/css/sign_up.css">
+</head>
+<body>
+    <!-- ********************************* header section ***************************** -->
+    
+    <%- include('./common/header.ejs') %>
+    <br><br><br>
+    <!-- ****************************************************************************** -->
+
+    <!-- ************************    sign_up form                     ************************* -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+                <p class="text-center display-4">Sign Up</p>
+                <form method="post" action="/sign_up">
+                    
+                    <div class="mb-3">
+                      <label for="first_name">First Name:</label>
+                      <input type="text" class="form-control" id="f_name" 		 placeholder="Enter first name" name="first_name">
+                    </div>
+                    
+                    <div class="mb-3">
+                      <label for="last_name">Last Name:</label>
+                      <input type="text" class="form-control" id="l_name" 		 placeholder="Enter last name" name="last_name">
+                    </div>
+                     
+                    <div class="mb-3">
+                      <label for="email">Email:</label>
+                      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    </div>
+                    
+                    <div class="mb-3">
+                      <label for="pwd">Password:</label>
+                      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+                    </div>
+                    
+                    <div class="mb-3">
+                      <label for="conf_pwd">Confirm Password:</label>
+                      <input type="password" class="form-control" id="conf_pwd" placeholder="Re-enter password" name="confirm_password">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="location">Address:</label>
+                        <textarea class="form-control" id="location" 		 placeholder="Enter your permanent address" name="address"></textarea>
+                      </div>
+                    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+            </div>
+            <div class="col-md-4">
+                
+            </div>
+        </div>
+    </div>
+    <!-- **************************************************************************** -->
+
+    <!-- ****************************** footer section **************************** -->
+    
+    <%- include('./common/footer.ejs') %>
+    <!-- ************************************************************************** -->
+</body>
+</html>

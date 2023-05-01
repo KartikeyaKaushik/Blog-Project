@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+</head>
+<body style="background-image: url('images/back_02.jpg');">
+    <!-- *********** header section ******************** -->
+    
+    <%- include('./common/header.ejs') %>
+    <br><br><br>
+
+    <!-- ************************************************ -->
+
+    <!-- ************************    blogs section          ************************* -->
+    
+    <div class="container-fluid">
+        <p class="display-3 text-center text-white">Blogs</p>
+    </div>
+    <div class="container-fluid">
+        <% if(data.length>0) {%>
+        <% for(let i=0; i<data.length; i++){ %>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card mb-3" >
+                    <div class="row g-0 mt-3">
+                      <div class="col-md-4">
+                        <img src="<%=data[i].image %>" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <a href="/blog/<%=data[i].title %>"><h5 class="card-title"><%=data[i].title %></h5></a>
+                          <p class="card-text"><%=data[i].description %></i></p>
+                          <p class="card-text"><%=data[i].author %></i></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <%} %>
+        <%} else{ %>
+        no data found
+        <% }%>
+    </div>
+
+    <!-- **************************************************************************** -->
+
+    <!-- ****************************** footer section **************************** -->
+    
+    <%- include('./common/footer.ejs') %>
+    <!-- ************************************************************************** -->
+</body>
+</html>

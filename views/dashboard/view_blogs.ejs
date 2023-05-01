@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <%- include('../common/header.ejs') %>
+    <br><br><br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <%- include('./left.ejs') %>
+            </div>
+            <div class="col-md-9">
+                <% if(data.length>0) { %>
+                <table class="table ">
+                    <% for(let i=0; i<data.length; i++){ %>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Blogger</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td><%=i %></td>
+                        <td><%= data[i].title %></td>
+                        <td><%= data[i].description %></td>
+                        <td><%= data[i].blogger %></td>
+                        <td>
+                            <a href="/edit_blogs/<%=data[i].title %>" type="button" class="btn btn-success">edit</a>
+                            <a href="/delete/<%=data[i].title %>" type="button" class="btn btn-danger mt-1">delete</a>
+
+                        </td>
+                    </tr>
+                    <%} %>
+                </table>
+                <%} else{ %>
+                    no data found
+                <%} %>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
